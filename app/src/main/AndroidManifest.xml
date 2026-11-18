@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnXML">
         <activity
+            android:name=".AddTransaction"
+            android:exported="false" />
+        <activity
             android:name=".TransactionDetailActivity"
             android:exported="false" />
         <activity

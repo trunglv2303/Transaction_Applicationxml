@@ -1,6 +1,8 @@
 package com.example.learnxml
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learnxml.Model.Transaction
@@ -8,17 +10,18 @@ import com.example.learnxml.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var transactionAdapter: TransactionAdapter
+     val transactions = mutableListOf(
+            Transaction(1, 150_000.0, "Chi", "16/11/2026"),
+            Transaction(2, 500_000.0, "Thu", "17/11/2026"),
+            Transaction(3, 75_000.0, "Chi", "18/11/2026")
+        )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val transactions = listOf(
-            Transaction(1, 150_000.0, "Chi", "16/11/2026"),
-            Transaction(2, 500_000.0, "Thu", "17/11/2026"),
-            Transaction(3, 75_000.0, "Chi", "18/11/2026")
-        )
+   
 //        val edtName = findViewById<TextView>(R.id.edtName)
 //        val editEmail=findViewById<TextView>(R.id.editEmail)
 //        val editAge=findViewById<TextView>(R.id.editAge)
@@ -32,10 +35,36 @@ class MainActivity : AppCompatActivity() {
 //    tvResult.text = "Xin chào $name+  Email: $email  Tuổi: $age"
 //}
         binding.recyclerTransactions.layoutManager = LinearLayoutManager(this)
-        binding.recyclerTransactions.adapter = TransactionAdapter(transactions) { transaction ->
+        transactionAdapter = TransactionAdapter(transactions) { transaction ->
             val detailIntent = TransactionDetailActivity.createIntent(this, transaction)
             startActivity(detailIntent)
         }
+        binding.recyclerTransactions.adapter = transactionAdapter
+        binding.btnAddTransaction.setOnClickListener {
+            val intent = Intent(this, AddTransaction::class.java)
+            addTransactionLauncher.launch(intent)
+        }
+    }
+
+    private val addTransactionLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        val data = result.data
+
+        if (result.resultCode != RESULT_OK || data == null) {
+            return@registerForActivityResult
+        }
+
+        val id = data.getIntExtra("id", 0)
+        val amount = data.getDoubleExtra("amount", 0.0)
+        val type = data.getStringExtra("type") ?: return@registerForActivityResult
+        val date = data.getStringExtra("date") ?: return@registerForActivityResult
+
+        val newTransaction = Transaction(id, amount, type, date)
+
+        val newPosition = transactions.size
+        transactions.add(newTransaction)
+        transactionAdapter.notifyItemInserted(newPosition)
     }
 
 //binding =ActivityMainBinding.inflate( layoutInflater )

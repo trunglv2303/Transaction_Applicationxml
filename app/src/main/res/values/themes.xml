@@ -13,4 +13,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.LearnXML.Transactions" parent="Theme.LearnXML">
+        <item name="colorPrimary">#145A50</item>
+        <item name="colorPrimaryVariant">#0D423A</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
 </resources>

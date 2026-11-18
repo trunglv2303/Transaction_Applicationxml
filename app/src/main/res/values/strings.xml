@@ -1,0 +1,22 @@
+<resources>
+    <string name="main_title">Xin chào!</string>
+    <string name="main_description">Chào mừng bạn đến với LearnXML.</string>
+    <string name="tvTitle">Quản lý sinh viên </string>
+    <string name="tvStudentId">Mã SV: 22IT001</string>
+    <string name="btnDetail">Xem chi tiết</string>
+        <string name="app_name">Counter App</string>
+        <string name="counter_initial">Số lần nhấn: 0</string>
+        <string name="counter_result">Số lần nhấn: %1$d</string>
+        <string name="increase_count">Tăng số lần nhấn</string>
+    <string name="welcome">Chào mừng bạn học android</string>
+    <string name="great_welcome">Xin chào </string>
+    <string name="btn_changegrate">Đổi lời chào!</string>
+
+
+    <string name="transaction_detail_title">Chi tiết giao dịch</string>
+    <string name="transaction_detail_id">Mã giao dịch: %1$d</string>
+    <string name="transaction_detail_amount">Số tiền: %1$s</string>
+    <string name="transaction_detail_type">Loại: %1$s</string>
+    <string name="transaction_detail_date">Ngày: %1$s</string>
+    <string name="transaction_detail_back">Quay lại</string>
+</resources>

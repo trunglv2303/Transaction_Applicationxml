@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/primary_blue"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Danh sách giao dịch"
+        android:textSize="24sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvTitle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Nhâp thông tin sinh viên "-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvname"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Họ và tên"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/edtName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Nhập họ tên"-->
+<!--        android:inputType="textPersonName" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvemail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Email"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editEmail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="studen@mail.com"-->
+<!--        android:inputType="textEmailAddress" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvage"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Tuổi"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editAge"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Nhâp tuổi sinh viên"-->
+<!--        android:inputType="number" />-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnShow"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hiển thị thông tin" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvResult"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="20sp" />-->
+
+</LinearLayout>
